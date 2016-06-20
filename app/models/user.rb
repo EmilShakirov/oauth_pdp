@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
     :rememberable,
     :trackable,
     :validatable,
-    omniauth_providers: []
+    omniauth_providers: Identity::PROVIDERS
 
   validates :full_name, presence: true
 end
