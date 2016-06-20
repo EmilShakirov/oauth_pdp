@@ -33,6 +33,7 @@ gem "health_check"
 gem "interactor"
 gem "kaminari"
 gem "memory_profiler"
+gem "omniauth-facebook"
 gem "puma"
 gem "pundit"
 gem "rack-canonical-host"
@@ -48,8 +49,8 @@ group :staging, :production do
 end
 
 group :test do
-  gem "capybara"
   gem "capybara-webkit"
+  gem "capybara"
   gem "codeclimate-test-reporter", require: false
   gem "database_cleaner"
   gem "email_spec"
