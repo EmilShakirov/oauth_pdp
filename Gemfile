@@ -23,6 +23,7 @@ gem "simple_form"
 gem "slim"
 
 # all other gems
+gem "concord"
 gem "decent_decoration"
 gem "decent_exposure"
 gem "devise"

@@ -38,6 +38,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    adamantium (0.2.0)
+      ice_nine (~> 0.11.0)
+      memoizable (~> 0.4.0)
     addressable (2.4.0)
     arel (6.0.3)
     ast (2.2.0)
@@ -95,6 +98,9 @@ GEM
       execjs
       json
     columnize (0.8.9)
+    concord (0.1.5)
+      adamantium (~> 0.2.0)
+      equalizer (~> 0.0.9)
     concurrent-ruby (1.0.1)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
@@ -126,6 +132,7 @@ GEM
       htmlentities (~> 4.3.3)
       launchy (~> 2.1)
       mail (~> 2.6.3)
+    equalizer (0.0.11)
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -167,6 +174,7 @@ GEM
     highline (1.6.21)
     htmlentities (4.3.4)
     i18n (0.7.0)
+    ice_nine (0.11.2)
     interactor (3.1.0)
     jasmine (2.3.0)
       jasmine-core (~> 2.3)
@@ -193,6 +201,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    memoizable (0.4.2)
+      thread_safe (~> 0.3, >= 0.3.1)
     memory_profiler (0.9.4)
     metamagic (3.1.7)
       rails (>= 3.0.0)
@@ -432,6 +442,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   coffee-rails
   coffeelint
+  concord
   database_cleaner
   decent_decoration
   decent_exposure
