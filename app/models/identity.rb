@@ -1,5 +1,5 @@
 class Identity < ActiveRecord::Base
-  PROVIDERS = %i(facebook).freeze
+  PROVIDERS = %i(facebook twitter).freeze
 
   belongs_to :user
 

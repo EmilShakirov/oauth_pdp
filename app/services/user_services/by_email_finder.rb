@@ -2,7 +2,7 @@ module UserServices
   class ByEmailFinder
     include Concord.new(:auth)
 
-    delegate :identities, :user, prefix: true
+    delegate :identities, to: :user, prefix: true
     delegate :info, :provider, :uid, to: :auth
     delegate :email, to: :info
 

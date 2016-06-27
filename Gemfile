@@ -35,6 +35,7 @@ gem "interactor"
 gem "kaminari"
 gem "memory_profiler"
 gem "omniauth-facebook"
+gem "omniauth-twitter"
 gem "puma"
 gem "pundit"
 gem "rack-canonical-host"
@@ -83,13 +84,14 @@ group :development, :test do
 end
 
 group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "bullet"
   gem "foreman", require: false
   gem "letter_opener"
   gem "quiet_assets"
   gem "rails-erd"
   gem "slim-rails"
-  gem "spring"
   gem "spring-commands-rspec"
-  gem "web-console", "~> 2.0"
+  gem "spring"
 end

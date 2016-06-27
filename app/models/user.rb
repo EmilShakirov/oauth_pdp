@@ -9,5 +9,7 @@ class User < ActiveRecord::Base
     :validatable,
     omniauth_providers: Identity::PROVIDERS
 
+  has_many :identities
+
   validates :full_name, presence: true
 end

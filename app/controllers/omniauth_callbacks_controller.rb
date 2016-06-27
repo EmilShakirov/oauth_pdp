@@ -8,14 +8,14 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     define_method(provider) do
       show_verification_notice && return unless auth_verified?
 
-      current_user ? connect_identity : sign_in
+      current_user ? connect_identity : signing_in
     end
   end
 
   private
 
   def auth
-    request.env["omniauth.auth"]
+    @auth ||= request.env["omniauth.auth"]
   end
 
   def connect_identity
@@ -24,15 +24,15 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to edit_user_registration_path
   end
 
-  def sign_in
+  def signing_in
     sign_in_and_redirect user_from_auth, event: :authentication
   end
 
   def show_verification_notice
-    redirect_to root_path, flash: { error: "Error" }
+    redirect_to root_path, flash: { error: "Verification failed" }
   end
 
   def user_from_auth
-    UserServices::OathFetcher.new(auth).call
+    UserServices::OauthFetcher.new(auth).call
   end
 end

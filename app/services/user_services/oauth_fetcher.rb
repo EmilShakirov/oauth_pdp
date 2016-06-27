@@ -1,5 +1,5 @@
 module UserServices
-  class OathFetcher
+  class OauthFetcher
     include Concord.new(:auth)
 
     def call
@@ -9,11 +9,11 @@ module UserServices
     private
 
     def new_user
-      FromAuthCreator.new(auth).call
+      UserServices::FromOauthCreator.new(auth).call
     end
 
     def user_found_by_email
-      ByEmailFinder.new(auth).call
+      UserServices::ByEmailFinder.new(auth).call
     end
 
     def user_from_omniauth
