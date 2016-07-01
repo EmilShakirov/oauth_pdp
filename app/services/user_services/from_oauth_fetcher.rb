@@ -1,5 +1,5 @@
 module UserServices
-  class ByOauthFetcher
+  class FromOauthFetcher
     include Concord.new(:auth)
 
     def call

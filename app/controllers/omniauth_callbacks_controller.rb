@@ -29,10 +29,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def show_verification_notice
-    redirect_to root_path, flash: { error: "Verification failed" }
+    redirect_to root_path, flash: { error: "Your oauth account is not verified" }
   end
 
   def user_from_auth
-    UserServices::OauthFetcher.new(auth).call
+    UserServices::FromOauthFetcher.new(auth).call
   end
 end

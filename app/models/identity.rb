@@ -1,5 +1,5 @@
 class Identity < ActiveRecord::Base
-  PROVIDERS = %i(facebook twitter).freeze
+  PROVIDERS = %i(facebook twitter google_oauth2).freeze
 
   belongs_to :user
 
@@ -10,5 +10,9 @@ class Identity < ActiveRecord::Base
 
   def self.from_omniauth(auth)
     find_by(provider: auth.provider, uid: auth.uid)
+  end
+
+  def self.generate_email(auth)
+    "#{auth.info.nickname || auth.uid}@#{auth.provider}_oauth.com"
   end
 end

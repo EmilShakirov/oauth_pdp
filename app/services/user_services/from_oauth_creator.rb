@@ -3,7 +3,7 @@ module UserServices
     include Concord.new(:auth)
 
     delegate :info, :provider, :uid, to: :auth
-    delegate :email, :name, :nickname, to: :info
+    delegate :email, :name, to: :info
 
     def call
       user.skip_confirmation!
@@ -12,10 +12,6 @@ module UserServices
     end
 
     private
-
-    def generate_email
-      "#{nickname || uid}@#{provider}_oauth.com"
-    end
 
     def password
       @password ||= Devise.friendly_token.first(8)
@@ -26,7 +22,7 @@ module UserServices
     end
 
     def user_email
-      email || generate_email
+      email || Identity.generate_email(auth)
     end
 
     def user_params
