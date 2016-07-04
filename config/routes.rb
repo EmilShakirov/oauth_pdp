@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   }
 
   root to: "pages#home"
+
+  resources :identities, only: :destroy
 end

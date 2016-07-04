@@ -24,12 +24,12 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to edit_user_registration_path
   end
 
-  def signing_in
-    sign_in_and_redirect user_from_auth, event: :authentication
+  def show_verification_notice
+    redirect_to root_path, flash: { error: "Your social account is not verified" }
   end
 
-  def show_verification_notice
-    redirect_to root_path, flash: { error: "Your oauth account is not verified" }
+  def signing_in
+    sign_in_and_redirect user_from_auth, event: :authentication
   end
 
   def user_from_auth
