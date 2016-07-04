@@ -25,7 +25,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def show_verification_notice
-    redirect_to root_path, flash: { error: "Your social account is not verified" }
+    redirect_to root_path, flash: { error: "Your social account is not verified." }
   end
 
   def signing_in

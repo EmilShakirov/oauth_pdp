@@ -10,6 +10,8 @@ feature "Sign Up" do
     fill_form(:user, user_attributes)
     click_button "Sign up"
 
+    expect(page).to have_content("Welcome! You have signed up successfully.")
+
     open_email(registered_user.email)
 
     expect(current_email).to have_subject("Confirmation instructions")

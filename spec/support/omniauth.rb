@@ -1,22 +1,25 @@
 module Omniauth
-  def auth_hash(verified: true)
-    OmniAuth::AuthHash.new(
-      provider: "facebook",
-      uid: "123545",
-      info: {
+  DEFAULT_HASH = {
+    provider: "facebook",
+    uid: "123545",
+    info: {
+      email: "john_smith@example.com",
+      name: "John Smith",
+      nickname: "lucky-john"
+    },
+    extra: {
+      raw_info: {
         email: "john_smith@example.com",
-        name: "John Smith",
-        nickname: "lucky-john",
-        verified: verified
-      },
-      extra: {
-        raw_info: {
-          email: "john_smith@example.com",
-          name: "John Smith",
-          verified: verified
-        }
+        name: "John Smith"
       }
-    )
+    }
+  }.freeze
+
+  def auth_hash(verified: true)
+    hash = DEFAULT_HASH.clone
+    hash[:info][:verified] = verified
+    hash[:extra][:raw_info][:verified] = verified
+    OmniAuth::AuthHash.new(hash)
   end
 end
 

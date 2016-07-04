@@ -5,5 +5,5 @@
       li = render "identities/provider_link", identity: identity
 b Add service to sign in with:
 ul
-  - Identity::PROVIDERS.each do |provider|
-    li = link_to "#{provider.to_s.titleize}", omniauth_authorize_path(:user, provider)
+  -   Identity::PROVIDERS.each do |provider|
+    li = link_to provider.to_s.titleize, omniauth_authorize_path(:user, provider)

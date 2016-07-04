@@ -9,7 +9,8 @@ describe UserServices::FromOauthFetcher do
     context "user_from_omniauth" do
       let(:user) { create(:user) }
       let!(:identity) do
-        create(:identity,
+        create(
+          :identity,
           provider: auth_hash.provider,
           uid: auth_hash.uid,
           user: user
