@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe AuthProviders::Facebook do
+describe AuthProviders::FacebookAuthDecorator do
   let(:service) { described_class.new(auth) }
 
   describe "#verified?" do

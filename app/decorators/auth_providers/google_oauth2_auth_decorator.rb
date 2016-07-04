@@ -1,5 +1,5 @@
 module AuthProviders
-  class GoogleOauth2 < Base
+  class GoogleOauth2AuthDecorator < BaseAuthDecorator
     def verified?
       extra.raw_info.email_verified?
     end

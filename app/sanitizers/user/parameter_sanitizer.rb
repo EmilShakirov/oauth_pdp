@@ -1,8 +1,9 @@
 class User
   class ParameterSanitizer < Devise::ParameterSanitizer
     USER_PARAMS = %i(
-      full_name
       email
+      full_name
+      location
       password
       password_confirmation
     ).freeze

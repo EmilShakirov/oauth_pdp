@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe AuthProviders::Twitter do
+describe AuthProviders::TwitterAuthDecorator do
   let(:service) { described_class.new(auth) }
 
   describe "#verified?" do

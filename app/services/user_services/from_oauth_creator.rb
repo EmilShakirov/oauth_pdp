@@ -2,7 +2,7 @@ module UserServices
   class FromOauthCreator
     include Concord.new(:auth)
 
-    delegate :info, :provider, :uid, to: :auth
+    delegate :info, :provider, :uid, :location, to: :auth
     delegate :email, :name, to: :info
 
     def call
@@ -29,6 +29,7 @@ module UserServices
       {
         email: user_email,
         full_name: name,
+        location: location,
         password: password,
         password_confirmation: password
       }

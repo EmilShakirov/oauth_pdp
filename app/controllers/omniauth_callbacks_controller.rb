@@ -33,6 +33,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def user_from_auth
-    UserServices::FromOauthFetcher.new(auth).call
+    UserServices::FromOauthFetcher.new(current_auth_provider).call
   end
 end
