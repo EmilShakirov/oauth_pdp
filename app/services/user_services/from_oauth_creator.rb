@@ -1,6 +1,7 @@
 module UserServices
   class FromOauthCreator
     include Concord.new(:auth)
+    include Procto.call
 
     delegate :info, :provider, :uid, :location, to: :auth
     delegate :email, :name, to: :info

@@ -1,6 +1,7 @@
 module UserServices
   class ByEmailFinder
     include Concord.new(:auth)
+    include Procto.call
 
     delegate :identities, to: :user, prefix: true
     delegate :info, :provider, :uid, to: :auth

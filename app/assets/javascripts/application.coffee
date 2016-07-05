@@ -8,8 +8,6 @@
 #= require jquery_ujs
 #= require foundation
 #= require current_user
-#= require skim
-#= require_tree ../templates
 #= require_tree .
 
 $(document).foundation()

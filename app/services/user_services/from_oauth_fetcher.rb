@@ -1,6 +1,7 @@
 module UserServices
   class FromOauthFetcher
     include Concord.new(:auth)
+    include Procto.call
 
     def call
       user_from_omniauth || user_found_by_email || new_user
@@ -9,11 +10,11 @@ module UserServices
     private
 
     def new_user
-      UserServices::FromOauthCreator.new(auth).call
+      UserServices::FromOauthCreator.call(auth)
     end
 
     def user_found_by_email
-      UserServices::ByEmailFinder.new(auth).call
+      UserServices::ByEmailFinder.call(auth)
     end
 
     def user_from_omniauth

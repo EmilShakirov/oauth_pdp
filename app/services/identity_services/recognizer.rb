@@ -1,6 +1,7 @@
 module IdentityServices
   class Recognizer
     include Concord.new(:user, :auth)
+    include Procto.call
 
     delegate :identities, to: :user, prefix: true
     delegate :info, :provider, :uid, to: :auth

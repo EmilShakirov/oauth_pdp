@@ -19,7 +19,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def connect_identity
-    IdentityServices::Recognizer.new(current_user, auth).call
+    IdentityServices::Recognizer.call(current_user, auth)
 
     redirect_to edit_user_registration_path
   end
@@ -33,6 +33,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def user_from_auth
-    UserServices::FromOauthFetcher.new(current_auth_provider).call
+    UserServices::FromOauthFetcher.call(current_auth_provider)
   end
 end

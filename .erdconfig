@@ -1,6 +1,0 @@
-# more about rails-erd config file you can find
-# here: https://github.com/voormedia/rails-erd#configuration
-# and here: http://voormedia.github.io/rails-erd/customise.html
-
-filename: doc/entity-relationship
-filetype: png

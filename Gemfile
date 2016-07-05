@@ -12,7 +12,6 @@ gem "foundation-icons-sass-rails"
 gem "foundation-rails"
 gem "jquery-rails"
 gem "sass-rails", "~> 5.0.0"
-gem "skim"
 gem "therubyracer", platforms: :ruby
 gem "uglifier", ">= 2.7.2"
 
@@ -28,23 +27,18 @@ gem "decent_decoration"
 gem "decent_exposure"
 gem "devise"
 gem "draper"
-gem "flamegraph"
 gem "google-analytics-rails"
 gem "health_check"
-gem "interactor"
-gem "kaminari"
-gem "memory_profiler"
 gem "omniauth-facebook"
 gem "omniauth-google-oauth2"
 gem "omniauth-twitter"
+gem "procto"
 gem "puma"
 gem "pundit"
 gem "rack-canonical-host"
-gem "rack-mini-profiler", require: false
 gem "responders"
 gem "rollbar"
 gem "seedbank"
-gem "stackprof"
 
 group :staging, :production do
   gem "newrelic_rpm"
@@ -73,13 +67,13 @@ group :development, :test do
   gem "dotenv-rails"
   gem "factory_girl_rails"
   gem "faker"
-  gem "jasmine", "> 2.0"
   gem "jasmine-jquery-rails"
+  gem "jasmine", "> 2.0"
   gem "pry-rails"
-  gem "rails_best_practices", require: false
+  gem "rack-mini-profiler", require: false
   gem "rspec-rails", "~> 3.4"
-  gem "rubocop", require: false
   gem "rubocop-rspec", require: false
+  gem "rubocop", require: false
   gem "scss_lint", require: false
   gem "slim_lint", require: false
 end
@@ -91,7 +85,6 @@ group :development do
   gem "foreman", require: false
   gem "letter_opener"
   gem "quiet_assets"
-  gem "rails-erd"
   gem "slim-rails"
   gem "spring-commands-rspec"
   gem "spring"
