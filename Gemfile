@@ -68,8 +68,6 @@ group :development, :test do
   gem "dotenv-rails"
   gem "factory_girl_rails"
   gem "faker"
-  gem "jasmine-jquery-rails"
-  gem "jasmine", "> 2.0"
   gem "pry-rails"
   gem "rack-mini-profiler", require: false
   gem "rspec-rails", "~> 3.4"
