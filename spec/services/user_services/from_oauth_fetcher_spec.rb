@@ -1,6 +1,7 @@
 require "rails_helper"
 
 describe UserServices::FromOauthFetcher do
+  let(:auth_hash) { build(:omniauth_hash) }
   let(:service) { described_class.new(auth_hash) }
 
   describe "#call" do

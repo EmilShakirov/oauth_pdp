@@ -1,6 +1,8 @@
 require "rails_helper"
 
 feature "Sign in with social account" do
+  let(:auth_hash) { build(:omniauth_hash) }
+
   context "when oauth confirmed" do
     include_context :stub_omniauth
 

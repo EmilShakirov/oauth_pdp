@@ -1,8 +1,6 @@
 module AuthProviders
   class FacebookAuthDecorator < BaseAuthDecorator
-    def location
-      info.location
-    end
+    delegate :location, to: :info
 
     def verified?
       info.verified? || extra.raw_info.verified?

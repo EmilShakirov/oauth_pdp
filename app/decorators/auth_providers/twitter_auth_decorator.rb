@@ -1,8 +1,6 @@
 module AuthProviders
   class TwitterAuthDecorator < BaseAuthDecorator
-    def location
-      info.location
-    end
+    delegate :location, to: :info
 
     def verified?
       credentials.token

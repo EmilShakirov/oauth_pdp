@@ -1,6 +1,7 @@
 require "rails_helper"
 
 feature "Connect social account" do
+  let(:auth_hash) { build(:omniauth_hash) }
   let!(:user) { create(:user, email: auth_hash.info.email) }
 
   subject(:click_connect_fb) do
