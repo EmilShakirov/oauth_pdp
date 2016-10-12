@@ -37,7 +37,6 @@ gem "puma"
 gem "pundit"
 gem "rack-canonical-host"
 gem "responders"
-gem "rollbar"
 gem "seedbank"
 
 group :staging, :production do
